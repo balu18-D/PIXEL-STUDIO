@@ -1,0 +1,649 @@
+/* =========================================================
+   PIXEL — FLASK VERSION STYLE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #080a14;
+    color: #ffffff;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px 32px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pixel-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #202335;
+    margin-bottom: 0;
+}
+
+.pixel-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.pixel-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #704cff, #328df0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    margin-right: 12px;
+}
+
+.pixel-name {
+    color: white;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.new-image-btn {
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 10px;
+    background: #15182a;
+    border: 1px solid #30344d;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.new-image-btn:hover {
+    border-color: #704cff;
+}
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome-title {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 55px;
+    color: #f5f5fb;
+    font-size: 58px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.welcome-title span {
+    color: #704cff;
+}
+
+/* =========================================================
+   UPLOAD CARD
+   ========================================================= */
+
+.upload-card {
+    width: 720px;
+    max-width: 98%;
+    min-height: 450px;
+    margin: 0 auto;
+    background: #111323;
+    border: 1px dashed #654cff;
+    border-radius: 25px;
+    padding: 38px 55px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.upload-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 24px;
+    background: #1d1d50;
+    color: #8065ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px auto;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.upload-title {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.upload-subtitle {
+    color: #999cb8;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.upload-or {
+    color: #7c809d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0 22px 0;
+}
+
+.upload-or::before,
+.upload-or::after {
+    content: "";
+    height: 1px;
+    background: #292c40;
+    flex: 1;
+}
+
+.dropzone {
+    border-radius: 16px;
+    transition: background 0.15s ease;
+}
+
+.dropzone.dragover {
+    background: #171a30;
+}
+
+.browse-btn,
+.capture-btn {
+    width: 350px;
+    max-width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.browse-btn {
+    background: linear-gradient(90deg, #7046f5, #328df0);
+    color: white;
+    border: none;
+}
+
+.capture-btn {
+    background: #15182a;
+    border: 1px solid #704cff;
+    color: white;
+}
+
+.capture-btn:hover {
+    background: #1d2040;
+}
+
+.formats {
+    color: #777b99;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.upload-error {
+    color: #f5566c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 14px;
+    min-height: 18px;
+}
+
+.hint-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #7c809d;
+    font-size: 13px;
+    margin-top: 24px;
+}
+
+/* =========================================================
+   WORKSPACE
+   ========================================================= */
+
+.workspace-title {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 25px;
+}
+
+.workspace-subtitle {
+    color: #8589a5;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 22px;
+}
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 1100px) {
+    .workspace-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.module-heading {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.small-title {
+    color: #8f93ad;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    margin-top: 17px;
+    margin-bottom: 7px;
+}
+
+.panel-heading {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   LEFT MODULE BUTTONS
+   ========================================================= */
+
+.module-btn {
+    width: 100%;
+    min-height: 38px;
+    margin-bottom: 4px;
+    background: #15182a;
+    border: 1px solid #282c42;
+    color: #ffffff;
+    text-align: left;
+    padding-left: 12px;
+    font-size: 13px;
+    border-radius: 10px;
+    display: block;
+}
+
+.module-btn:hover {
+    background: #1b1e35;
+    border-color: #704cff;
+}
+
+.module-btn.active {
+    background: linear-gradient(90deg, #7046f5, #328df0);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+/* =========================================================
+   MIDDLE PANEL
+   ========================================================= */
+
+.middle-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.operation-label {
+    color: #8065ff;
+    font-size: 14px;
+    font-weight: 700;
+    background: #171a30;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.reset-btn {
+    min-height: 38px;
+    padding: 0 16px;
+    border-radius: 10px;
+    background: #15182a;
+    border: 1px solid #30344d;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.reset-btn:hover {
+    border-color: #704cff;
+}
+
+.image-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 700px) {
+    .image-compare {
+        grid-template-columns: 1fr;
+    }
+}
+
+.image-title {
+    color: #9296b1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 7px;
+}
+
+.image-frame {
+    background: #111323;
+    border: 1px solid #282c42;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+
+.image-frame img {
+    width: 170%;
+    height: 80%;
+    display: block;
+    border-radius: 10px;
+}
+
+.status-banner {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #15182a;
+    border: 1px solid #2b3d2f;
+    color: #6fe3a0;
+    font-size: 14px;
+    display: none;
+}
+
+.status-banner.visible {
+    display: block;
+}
+
+/* =========================================================
+   ANALYTICS PANEL
+   ========================================================= */
+
+.analysis-card {
+    background: #15182a;
+    border: 1px solid #282c42;
+    border-radius: 11px;
+    padding: 12px;
+    margin-bottom: 9px;
+    box-sizing: border-box;
+}
+
+.analysis-label {
+    color: #8589a5;
+    font-size: 11px;
+}
+
+.analysis-value {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 4px;
+    word-break: break-word;
+}
+
+.histogram-card {
+    background: #111323;
+    border: 1px solid #282c42;
+    border-radius: 11px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.histogram-card img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+}
+
+/* =========================================================
+   DOWNLOAD / SAVE
+   ========================================================= */
+
+.action-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+    .action-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.download-btn,
+.save-btn {
+    min-height: 44px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.download-btn {
+    background: linear-gradient(90deg, #7046f5, #328df0);
+    color: white;
+    border: none;
+}
+
+.save-btn {
+    background: #15182a;
+    border: 1px solid #30344d;
+    color: white;
+}
+
+.save-btn:hover {
+    border-color: #704cff;
+}
+
+.save-toast {
+    grid-column: 1 / -1;
+    color: #6fe3a0;
+    font-size: 13px;
+    text-align: center;
+    min-height: 16px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #202335;
+    margin: 24px 0;
+}
+
+.spinner {
+    display: none;
+    text-align: center;
+    color: #8589a5;
+    font-size: 13px;
+    padding: 20px;
+}
+
+.spinner.visible {
+    display: block;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .welcome-title {
+        font-size: 42px;
+        margin-top: 45px;
+        margin-bottom: 40px;
+    }
+
+    .upload-card {
+        width: 92%;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome-title {
+        font-size: 34px;
+    }
+
+    .upload-title {
+        font-size: 20px;
+    }
+
+    .upload-subtitle {
+        font-size: 14px;
+    }
+
+    .upload-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
+}
+.welcome-subtitle {
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 45px;
+    color: #999cb8;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+.zoom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 18px 0;
+}
+
+.zoom-controls button {
+    min-width: 42px;
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 9px;
+    background: #15182a;
+    border: 1px solid #30344d;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.zoom-controls button:hover {
+    border-color: #704cff;
+    background: #1d2040;
+}
+
+#zoom-level {
+    min-width: 55px;
+    text-align: center;
+    color: #999cb8;
+    font-size: 14px;
+    font-weight: 600;
+}
+.histogram-card {
+    position: relative;
+}
+
+#histogram-tooltip {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #111323;
+    border: 1px solid #3b3f5c;
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.5;
+    pointer-events: none;
+    z-index: 10;
+}
+.histogram-card {
+    position: relative;
+}
+
+#histogram-chart {
+    width: 100%;
+    height: 180px;
+    display: block;
+    cursor: crosshair;
+}
+
+#histogram-tooltip {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+
+    background: #111323;
+    border: 1px solid #704cff;
+    border-radius: 8px;
+
+    padding: 8px 12px;
+
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.6;
+
+    pointer-events: none;
+    z-index: 100;
+    white-space: nowrap;
+}

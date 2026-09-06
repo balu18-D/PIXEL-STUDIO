@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXEL — Image Workspace</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="pixel-header">
+        <div class="pixel-header-left">
+            <div class="pixel-logo">P</div>
+            <div class="pixel-name">PIXEL</div>
+        </div>
+        <button type="button" class="new-image-btn" id="new-image-btn">+ New Image</button>
+    </div>
+
+    <div class="workspace-title">Image Workspace</div>
+    <div class="workspace-subtitle">Analyze and process your image</div>
+
+    <div class="workspace-grid">
+
+        <!-- LEFT: MODULES -->
+        <div class="left-panel">
+            <div class="module-heading">MODULES</div>
+
+            <div class="small-title">COLOR</div>
+            <button class="module-btn" data-op="Grayscale">Grayscale</button>
+            <button class="module-btn" data-op="RGB to HSV">RGB &rarr; HSV</button>
+            <button class="module-btn" data-op="Hue">&#8618; Hue</button>
+            <button class="module-btn" data-op="Saturation">&#8618; Saturation</button>
+            <button class="module-btn" data-op="Value">&#8618; Value</button>
+
+            <div class="small-title">ENHANCEMENT</div>
+            <button class="module-btn" data-op="Histogram">Histogram</button>
+            <button class="module-btn" data-op="Brightness">Brightness</button>
+            <button class="module-btn" data-op="Contrast">Contrast</button>
+
+            <div class="small-title">FILTERS</div>
+            <button class="module-btn" data-op="Average Blur">Average Blur</button>
+            <button class="module-btn" data-op="Gaussian Blur">Gaussian Blur</button>
+            <button class="module-btn" data-op="Canny Edge">Canny Edge</button>
+            <button class="module-btn" data-op="Sobel Edge">Sobel Edge</button>
+
+            <div class="small-title">SHARPEN</div>
+            <button class="module-btn" data-op="Laplacian Sharpening">Laplacian Sharpening</button>
+
+            <div class="small-title">BINARY</div>
+            <button class="module-btn" data-op="Binary Image">Binary Image</button>
+
+            <div class="small-title">MORPHOLOGICAL</div>
+            <button class="module-btn" data-op="Erosion">Erosion</button>
+            <button class="module-btn" data-op="Dilation">Dilation</button>
+            <button class="module-btn" data-op="Opening">Opening</button>
+            <button class="module-btn" data-op="Closing">Closing</button>
+        </div>
+
+        <!-- MIDDLE: BEFORE / AFTER -->
+        <div class="middle-panel">
+            <div class="middle-top">
+               
+                <div class="operation-label" id="operation-label">Original</div>
+                <button type="button" class="reset-btn" id="reset-btn">Reset to Original</button>
+            </div>
+ 
+
+<!-- ZOOM CONTROLS -->
+<div class="zoom-controls">
+    <button type="button" id="zoom-out">−</button>
+    <span id="zoom-level">100%</span>
+    <button type="button" id="zoom-in">+</button>
+    <button type="button" id="zoom-reset">Reset Zoom</button>
+</div>
+
+<div class="image-compare">
+    <div>
+        <div class="image-title">ORIGINAL</div>
+        <div class="image-frame">
+            <img id="original-image" src="" alt="Original">
+        </div>
+    </div>
+
+    <div>
+        <div class="image-title">PROCESSED</div>
+        <div class="image-frame">
+            <img id="processed-image" src="" alt="Processed">
+        </div>
+    </div>
+</div>
+
+            <div class="spinner" id="spinner">Processing...</div>
+
+            <div class="status-banner" id="status-banner"></div>
+
+            <div class="action-row" id="action-row" style="display:none;">
+                <a href="{{ url_for('download') }}" class="download-btn">&#11015; Download Result</a>
+                <button type="button" class="save-btn" id="save-btn">&#128190; Save to OUTPUT</button>
+                <div class="save-toast" id="save-toast"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: ANALYTICS -->
+        <div class="right-panel">
+            <div class="module-heading">ANALYTICS</div>
+
+            <div class="analysis-card">
+                <div class="analysis-label">File</div>
+                <div class="analysis-value" id="an-file">{{ filename }}</div>
+            </div>
+            <div class="analysis-card">
+                <div class="analysis-label">Resolution</div>
+                <div class="analysis-value" id="an-resolution">—</div>
+            </div>
+            <div class="analysis-card">
+                <div class="analysis-label">Image Memory</div>
+                <div class="analysis-value" id="an-size">—</div>
+            </div>
+            <div class="analysis-card">
+                <div class="analysis-label">Brightness</div>
+                <div class="analysis-value" id="an-brightness">—</div>
+            </div>
+            <div class="analysis-card">
+                <div class="analysis-label">Contrast</div>
+                <div class="analysis-value" id="an-contrast">—</div>
+            </div>
+            <div class="analysis-card">
+                <div class="analysis-label">Status</div>
+                <div class="analysis-value" id="an-status">Ready</div>
+            </div>
+            
+            <div class="analysis-card">
+    <div class="analysis-label">Operation</div>
+    <div class="analysis-value" id="an-operation">None</div>
+</div>
+
+          <div class="histogram-card">
+    <div class="small-title" style="margin-top:0;">
+        RGB HISTOGRAM
+    </div>
+
+    <canvas id="histogram-chart"></canvas>
+
+    <div id="histogram-tooltip"></div>
+</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/workspace.js') }}"></script>
+</body>
+</html>

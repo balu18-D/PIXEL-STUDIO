@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXEL — Image Processing Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="pixel-header">
+        <div class="pixel-header-left">
+            <div class="pixel-logo">P</div>
+            <div class="pixel-name">PIXEL</div>
+        </div>
+    </div>
+
+    <div class="welcome-title">
+    Welcome to <span>PIXEL</span>
+</div>
+
+    <div class="welcome-subtitle">
+    Interactive Image Processing &amp; Analysis Studio
+</div>
+
+    <form id="upload-form">
+        <div class="upload-card dropzone" id="dropzone">
+
+            <div class="upload-icon">&#8593;</div>
+
+            <div class="upload-title">Upload Image</div>
+            <div class="upload-subtitle">Drag &amp; Drop your image here</div>
+
+            <div class="upload-or"><span>OR</span></div>
+
+            <input type="file" id="file-input" name="file" accept=".jpg,.jpeg,.png,.bmp" hidden>
+
+            <button type="button" class="browse-btn" id="browse-btn">
+                &#9633; Browse Files
+            </button>
+
+            <button type="button" class="capture-btn" id="capture-btn">
+                &#9635; Capture Image
+            </button>
+
+            <div class="formats">JPG &nbsp;&bull;&nbsp; JPEG &nbsp;&bull;&nbsp; PNG &nbsp;&bull;&nbsp; BMP</div>
+        </div>
+    </form>
+
+    <video id="camera-video" autoplay playsinline
+    style="display:none; width:680px; max-width:92%; margin:20px auto 0 auto; border-radius:16px; border:1px dashed #654cff;">
+</video>
+    <canvas id="camera-canvas" style="display:none;"></canvas>
+    <div id="camera-controls" style="display:none; text-align:center; margin-top:14px;">
+        <button type="button" class="capture-btn" id="snap-btn" style="display:inline-flex;">&#9635; Take Photo</button>
+    </div>
+
+    <div class="upload-error" id="upload-error"></div>
+
+    <div class="hint-row">
+        <span>&#9432;</span>
+        <span>Upload or capture an image to start processing</span>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>
